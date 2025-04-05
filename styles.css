@@ -143,9 +143,9 @@ footer {
 }
 .add-workout-content{
   padding: 2em;
-  width:100%;
-  justify-content: center;
- 
+  width:90%;
+  height: 100%;
+
 }
 .title-section {
   text-align: center;
@@ -163,12 +163,6 @@ footer {
   background: #d3d3d3;
   border: 1px solid #999;
   resize: vertical;
-}
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1em;
-  margin-top: 2em;
 }
 .buttons button, .buttons label {
   padding: 0.5em 1em;
@@ -195,4 +189,76 @@ footer {
 .tutorial {
   font-style: italic;
   font-size: 0.9em;
+}
+form {
+  padding: 2em;
+  margin-top: 2em;
+}
+.myCalendar{
+  padding: 0.5em;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5em;
+  align-items: flex-start;
+}
+.form-group label {
+  width: 150px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  background: #d3d3d3;
+  border: 1px solid #999;
+  padding: 0.5em;
+  width: 100%;
+  max-width: 400px;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.form-half {
+  flex: 1;
+  min-width: 250px;
+}
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+.buttons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+.buttons button {
+  padding: 0.5em 1.5em;
+  background: #eee;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+.buttons button:last-child {
+  font-style: italic;
+}
+.tutorial {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+footer {
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-around;
+  font-size: 0.9em;
+}
+.bottom-left, .bottom-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
