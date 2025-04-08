@@ -1,271 +1,171 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  background: #dedede;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo-circle {
-  background: #ccc;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  text-align: center;
-  line-height: 1.2;
-}
-nav a {
-  margin: 0 10px;
-  text-decoration: underline;
-  color: black;
-  font-weight: normal;
-}
-nav a.active {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-main.home-layout {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  padding: 60px;
-}
-main.calendar-layout {
-  flex: 1;
-  padding: 60px;
-}
-
-.content {
-  max-width: 50%;
-}
-.content h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-.content p {
-  font-style: italic;
-  margin-bottom: 20px;
-}
-.oval-button {
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 10px 20px;
-  background: transparent;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-ol {
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-blockquote {
-  font-style: italic;
-}
-.image-placeholder {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-button > a{
-  text-decoration: none;
-  color:black;
-}
-button, button > a:hover{
-  background-color:white;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   
-}
-.calendar-layout h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-}
-.day {
-  background: #ccc;
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-}
-.day-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.control-btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  background: #eee;
-  border: 1px solid #888;
-  margin: 20px 10px 0;
-  cursor: pointer;
-}
-.calendar-buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-footer {
-  background: #dedede;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  width: 100%;
-}
-.footer-links a {
-  margin-right: 20px;
-  text-decoration: underline;
-  color: black;
-}
-.footer-logo {
-  font-weight: bold;
-}
-.add-workout-content{
-  padding: 2em;
-  width:90%;
-  height: 100%;
-
-}
-.title-section {
-  text-align: center;
-}
-.title-section h1 {
-  text-shadow: 2px 2px 4px #999;
-}
-.section {
-  margin: 2em 0;
-}
-.section textarea {
-  width: 100%;
-  height: 100px;
-  padding: 1em;
-  background: #d3d3d3;
-  border: 1px solid #999;
-  resize: vertical;
-}
-.buttons button, .buttons label {
-  padding: 0.5em 1em;
-  border: 1px solid #555;
-  background: #eee;
-  cursor: pointer;
-}
-.toggle-switch {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-footer {
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-around;
-  font-size: 0.9em;
-  box-sizing: border-box;
-  width: 100%;
-}
-.bottom-left, .bottom-right {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.tutorial {
-  font-style: italic;
-  font-size: 0.9em;
-}
-form {
-  padding: 2em;
-  margin-top: 2em;
-}
-.myCalendar{
-  padding: 0.5em;
-}
-.form-group {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1.5em;
-  align-items: flex-start;
-}
-.form-group label {
-  width: 150px;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-.form-group input[type="text"],
-.form-group select,
-.form-group textarea {
-  background: #d3d3d3;
-  border: 1px solid #999;
-  padding: 0.5em;
-  width: 100%;
-  max-width: 400px;
-}
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2em;
-}
-.form-half {
-  flex: 1;
-  min-width: 250px;
-}
-textarea {
-  height: 120px;
-  resize: vertical;
-}
-.buttons {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1em;
-}
-.buttons button {
-  padding: 0.5em 1.5em;
-  background: #eee;
-  border: 1px solid #555;
-  cursor: pointer;
-}
-.buttons button:last-child {
-  font-style: italic;
-}
-.tutorial {
-  font-style: italic;
-  font-size: 0.9em;
-  margin-top: 1em;
-}
-footer {
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-around;
-  font-size: 0.9em;
-  box-sizing: border-box;
-  width: 100%;
-}
-.bottom-left, .bottom-right {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+  /* Set body & html to full height */
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Flexbox wrapper for full page layout */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header & Footer */
+  header, footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .logo-circle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Make main content grow to fill space */
+  main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Specific layouts */
+  .home-layout, .calendar-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  /* Left content */
+  .content {
+    width: 55%;
+  }
+  
+  /* Image */
+  .image-placeholder {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Image styling */
+  .image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  /* Typography */
+  h1, h2 {
+    color: #222;
+    margin-bottom: 1rem;
+  }
+  
+  p, ol, blockquote {
+    margin-bottom: 1.5rem;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .oval-button,
+  .control-btn {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .oval-button:hover,
+  .control-btn:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Calendar */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .day {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .day-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .block {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  em {
+    font-style: normal;
+    color: #777;
+    font-size: 0.95rem;
+  }
+  
+  /* Calendar controls */
+  .calendar-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Footer links */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-logo {
+    font-size: 0.9rem;
+  }
 
