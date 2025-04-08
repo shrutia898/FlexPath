@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>FlexPath - Home</title>
+</head>
+<body>
+  <header>
+    <div class="logo-circle">LOGO<br>(TBD)</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="calendar.html">MyCalendar</a>
+      <a href="#">Success Stories</a>
+      <a href="#">Sign Up / Log In</a>
+    </nav>
+  </header>
+
+  <div class="add-workout-content">
+    <div class="title-section">
+      <h1>“ Leg Day - Strength Training “</h1>
+      <h3><strong>Date</strong></h3>
+    </div>
+
+    <div class="arrow-nav">
+      <p><a href="calendar.html">← MyCalendar</a></p>
+    </div>
+
+    <div class="section">
+      <h3>Workout Description:</h3>
+      <textarea>
+Here you can type out a description of what you want from your workout. For example: Exercises List- Squats (4 sets, 10 reps), Lunges (3 sets, 12 reps), etc. Estimated Duration- 45 minutes.
+      </textarea>
+    </div>
+
+    <div class="section">
+      <h3>Additional Notes:</h3>
+      <textarea>
+Here you can type out any additional notes you want to include about your workout or a meal plan your following that week. The sky is the limit! Anything that you think is relevant to your fitness lifestyle. For example: Focus on form, keep core tight. Make sure to drink more water and get more Vitamin C.
+      </textarea>
+    </div>
+
+    <p class="tutorial">Need Help? Watch this <strong><u>tutorial</u></strong>.</p>
+
+    <div class="buttons">
+        <button id="edit-btn" class="control-btn">Edit Workout</button>
+        <div class="toggle-switch">
+          <label class="control-btn">
+            <input type="checkbox" id="status-toggle" />
+            <span id="status-label">Incomplete</span>
+          </label>
+        </div>
+      </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">About Company</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-logo">LOGO (TBD) ©2025</div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("status-toggle");
+      const label = document.getElementById("status-label");
+      let editBtn = document.getElementById("edit-btn");
+  
+      toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+          const today = new Date();
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const dd = String(today.getDate()).padStart(2, '0');
+          const yy = String(today.getFullYear()).slice(2);
+          const completedDate = `Completed on: ${mm}/${dd}/${yy}`;
+  
+          label.innerHTML = "<strong>Completed</strong>";
+          editBtn.outerHTML = `<span class="control-btn">${completedDate}</span>`;
+        } else {
+          label.innerHTML = "Incomplete";
+  
+          const newBtn = document.createElement("button");
+          newBtn.className = "control-btn";
+          newBtn.id = "edit-btn";
+          newBtn.innerText = "Edit Workout";
+  
+          const buttonsContainer = document.querySelector(".buttons");
+          const oldSpan = document.querySelector(".buttons span.control-btn");
+          if (oldSpan) {
+            buttonsContainer.insertBefore(newBtn, oldSpan);
+            oldSpan.remove();
+            editBtn = newBtn;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
