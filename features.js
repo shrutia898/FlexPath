@@ -127,17 +127,29 @@ workoutNameInput.addEventListener('input', function () {
   suggestionBox.style.display = 'block';
 });
 
+console.log('features.js loaded');
+
 // Clear Last Saved Workout
 const clearBtn = document.createElement('button');
 clearBtn.textContent = "Clear Last Workout";
 clearBtn.style.marginTop = '10px';
-clearBtn.style.backgroundColor = '#ff6666';
+clearBtn.style.backgroundColor = '#ff2222'; // More visible red
 clearBtn.style.color = '#fff';
-clearBtn.style.border = 'none';
-clearBtn.style.padding = '10px';
+clearBtn.style.border = '2px solid #fff';
+clearBtn.style.padding = '15px';
+clearBtn.style.fontWeight = 'bold';
+clearBtn.style.fontSize = '1.1rem';
 clearBtn.style.cursor = 'pointer';
+clearBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
 
-document.querySelector('.add-workout-content').prepend(clearBtn);
+// Add the button to workout details page if .buttons exists
+const buttonsContainer = document.querySelector('.buttons');
+if (buttonsContainer) {
+  console.log('Adding Clear Last Workout button to details page');
+  buttonsContainer.prepend(clearBtn);
+} else {
+  console.log('No .buttons container found on this page');
+}
 
 clearBtn.addEventListener('click', function () {
   localStorage.removeItem('lastWorkout');
